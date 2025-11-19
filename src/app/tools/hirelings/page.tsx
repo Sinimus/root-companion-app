@@ -30,6 +30,7 @@ export default function HirelingsPage() {
           if (typeof value === 'number') {
             // Old format: { markers: number, isPromoted: boolean }
             migrated[id] = {
+              id, // <--- Add this line
               markers: value,
               isPromoted: true
             };
@@ -63,6 +64,7 @@ export default function HirelingsPage() {
       setActiveHirelings(prev => ({
         ...prev,
         [hirelingId]: {
+          id: hirelingId, // <--- Add this line
           markers: 3, // Default 3 control markers
           isPromoted: true // Default to promoted state
         }
